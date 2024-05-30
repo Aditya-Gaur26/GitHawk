@@ -1,0 +1,246 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+.navbar1{
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    /* position: fixed; */
+    background-color: rgb(58, 125, 184);
+    transition: background-color 0.5s ease;
+}
+.nav-heading{
+    font-size:1.6vw;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+.nav-image{
+    background-image: url("/images/logo.png");
+    background-size: cover; /* Ensures the background image scales */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the background image */
+    border: 1px solid black;
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.nav-links-items{
+    font-size: 1.4vw;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    color:black;
+}
+.nav-links-items:visited{
+    color:black;
+}
+.nav-links-items:hover{
+    font-size:1.6vw;
+    color:yellow;
+}
+
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+  
+.checkbox-label {
+    background-color: #111;
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+.fa-moon {color: #f1c40f;}
+  
+.fa-sun {color: #f39c12;}
+  
+.checkbox-label .ball {
+    background-color: #fff;
+    width: 1.4vw;
+    height: 1.4vw;
+    position: absolute;
+    left: 0.1vw;
+    top: 0.33vh;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+  
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(1.6vw);
+}
+  
+.searchbar{
+    font-size:1.7vw;
+    border-radius: 12px;
+    outline: none; 
+    border: none;
+    padding:4px;
+    cursor: pointer;
+    transition: outline-color 0.3s, box-shadow 0.3s; /* Smooth transition effect */
+    margin-left: 1vw;;
+}
+.searchbar:focus {
+    outline: 2px solid yellowgreen ; /* Adds a blue outline on focus */
+}
+
+.searchbar:hover {
+    box-shadow: 0 0 10px yellow; /* Adds a blue shadow on hover */
+}
+  
+main{
+    width:80%;
+    margin: auto;
+    /* margin-top: 20vh; */
+    
+}
+
+.main-heading{
+    margin-top:5vh;
+    text-align: center;
+    font-size:4vw;
+    text-decoration: underline;
+}
+.main-info{
+    text-align: center;
+    margin-top:2vh;
+    font-size:2vw;
+    font-weight: 0;
+}
+
+.socials{
+    width:20%;
+    margin:auto;
+    /* border:1px solid black; */
+    display:flex;
+    justify-content: space-between;
+    padding:1vh;
+    margin-top:8vh;
+}
+.followus{
+    font-size:3vh;
+}
+.icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.icon-items{
+    padding:0.3vh;
+    margin-left:1.2vh;
+}
+
+.fa-facebook {
+background: #3B5998;
+color: white;
+}
+
+.fa-twitter {
+background: #55ACEE;
+color: white;
+}
+
+.fa-google {
+background: #dd4b39;
+color: white;
+}
+
+.fa-linkedin {
+background: #007bb5;
+color: white;
+}
+
+.fa-youtube {
+background: #bb0000;
+color: white;
+}
+
+.fa-instagram {
+background: #125688;
+color: white;
+}
+
+.fa-github{
+    background: black;
+    color:white
+}
+.fa-google {
+    background: #dd4b39;
+    color: white;
+  }
+.card-container{
+    width:80%;
+    margin:auto;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card1{
+    width:45%;
+    margin: auto;
+    margin-bottom: 10vh;
+    border:none;
+    
+}
+.card1:first-child,
+.card1:nth-child(2){
+    margin-top:10vh;
+}
+
+.card1:last-child,
+.card1:nth-last-child(2){
+    margin-bottom:10vh;
+}
+
+.about-us{
+    background-color: rgb(75, 75, 75);
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15vh;
+}
+.about-us-info{
+    width: 50%;
+}
+.about-us-h1{
+    padding-left: 4%;
+    padding-top:10vh;
+    font-style: italic;
+}
+.developers{
+    padding-bottom: 8vh;
+    padding-left: 4%;;
+}
+.devname{
+    font-size:2vw;
+    padding:2%;
+    font-style: italic;
+}
+/* .about-us-image{
+    float:right;
+    position: relative;
+    top:-65vh;
+} */
+
+.footer{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1%;
+    background-color: rgb(75, 75, 75);
+    color: #fff;
+}

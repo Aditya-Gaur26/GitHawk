@@ -1,0 +1,135 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+
+.user-container { 
+    width: 40%; 
+   
+    margin-bottom: 10vh;
+    padding: 20px; 
+    border: 4px solid #ccc; 
+    border-radius: 10px; 
+}
+.avatar{ 
+    width: 20vh; 
+    height: 20vh;
+    border-radius: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border:1px solid black;
+}
+main{
+    margin-top:10vh;
+    margin-left:10vw; 
+    display: flex;
+    justify-content: space-between;
+}
+.repositories{
+    width:50%;
+    margin-right:4vw;
+}
+.search{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding: 1%;
+    margin-bottom:5vh;
+}
+.search-text{
+    font-size:20px;
+    border-radius:5px;
+    padding: 1%;
+    margin-right:2vw;
+    width: 80%;
+}
+
+.search-text:hover{
+    outline: 2px solid rgb(0, 83, 161);
+}
+.selected{
+    background-color: green;
+    color:white;
+}
+.search-btn{
+    font-size:20px;
+}
+.sort-options{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:20%;
+    margin-right: 0;
+    margin-bottom:5vh;
+}
+.asc,
+.desc{
+    cursor: pointer;
+}
+.hidden{
+    display:none;
+}
+
+
+.repositories-items{
+    height:180vh;
+    width:100%;
+    border: 4px solid #ccc; 
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items:self-start;
+    flex-wrap: wrap;
+}
+
+.repo-card{
+    height:25vh;
+    width:80%;
+    margin:auto;
+    margin-top:3vh;
+    margin-bottom: 0;
+    border:2px solid black;
+    border-radius:8px;
+}
+.repo-card-items{
+    text-align: center;
+    margin-bottom:1.5vh;
+}
+.repo-card-items:first-child{
+    margin-top:2vh;
+}
+.repo-name{
+    text-decoration:underline;
+}
+
+.page-numbers{
+    width:50%;
+    margin:auto;
+    margin-bottom: 10vh;
+    margin-top: 2vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+.pn{
+    margin-right:1vw;
+    cursor: pointer;
+}
+.page-number-item{
+    color:rgb(142, 142, 11);
+    text-decoration: none;
+}
+.page-number-item:visited{
+    color:rgb(86, 86, 2);
+    text-decoration: none;
+}
+.current-page{
+    text-decoration: underline;
+}
+.disabled-btn{
+    cursor: not-allowed; /* Change cursor to indicate disabled state */
+    pointer-events: none; /* Prevent click events */
+    opacity: 0.6; /* Reduce opacity */
+}

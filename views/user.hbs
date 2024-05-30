@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>{{user_data.login}}</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" type="image/x-icon" href="../images/favicon.png">
+        <link rel="stylesheet" href="../styles/user.css">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    </head>
+
+    <body>
+        <header>
+            <!-- place navbar here -->
+        </header>
+        <main>
+            <div class="user-container">
+                <div href="{{user_data.html_url}}" style="background-image: url('{{user_data.avatar_url}}');" alt="{{user_data.login}}'s avatar" class="avatar"></div>
+                <h1 id="username">{{user_data.login}}</h1>
+                <hr style="font-weight:900;">
+                <dl class="user-info">
+                    <dt>ID:</dt>
+                    <dd>{{user_data.id}}</dd>
+                    <dt>Name:</dt>
+                    <dd>{{user_data.name}}</dd>
+                    <dt>Company:</dt>
+                    <dd>{{user_data.company}}</dd>
+                    <dt>Bio:</dt>
+                    <dd>{{user_data.bio}}</dd>
+                    <dt>Location:</dt>
+                    <dd>{{user_data.location}}</dd>
+                    <dt>Twitter:</dt>
+                    <dd><a href="https://twitter.com/{{user_data.twitter_username}}" target="_blank">@{{user_data.twitter_username}}</a></dd>
+                    <dt>Node ID:</dt>
+                    <dd>{{user_data.node_id}}</dd>
+                    <dt>Type:</dt>
+                    <dd>{{user_data.type}}</dd>
+                    <dt>Hireable:</dt>
+                    <dd>{{user_data.hireable}}</dd>
+                    <dt>Site Admin:</dt>
+                    <dd>{{user_data.site_admin}}</dd>
+                    <dt>Public Repos:</dt>
+                    <dd id="repo-count">{{user_data.public_repos}}</dd>
+                    <dt>Public Gists:</dt>
+                    <dd>{{user_data.public_gists}}</dd>
+                    <dt>Followers:</dt>
+                    <dd>{{user_data.followers}}</dd>
+                    <dt>Following:</dt>
+                    <dd>{{user_data.following}}</dd>    
+                    <dt>Created At:</dt>
+                    <dd>{{user_data.created_at}}</dd>
+                    <dt>Updated At:</dt>
+                    <dd>{{user_data.updated_at}}</dd>
+                    <dt>Blog:</dt>
+                    <dd><a href="{{user_data.blog}}" target="_blank">{{user_data.blog}}</a></dd>
+                    <dt>Email:</dt>
+                    <dd>{{user_data.email}}</dd>
+                    <dt>GitHub Profile:</dt>
+                    <dd><a href="{{user_data.html_url}}" target="_blank">{{user_data.html_url}}</a></dd>
+                </dl>
+            </div>
+
+            <div class="repositories">
+                <div class="search">
+                    <input class="search-text" type="text" list="suggestions" placeholder="🔎search for repositories">
+                    <datalist id="suggestions">
+                         {{#each user_repos as |r|}}
+                            <option value="{{r}}">
+                        {{/each}}
+                    </datalist>
+                    <button class="search-btn btn btn-outline-success">Search</button>
+                </div>
+                <div class="sort-options">
+                    <div class="asc-desc" style="font-size:20px; margin:0; padding:0;">
+                        <div class="asc" style="font-size:20px;">🔼</div>
+                        <div class="desc">🔽</div>
+                    </div>
+                    <div class="dropdown">
+                        <button
+                            class="btn btn-secondary dropdown-toggle"
+                            type="button"
+                            id="triggerId"
+                            data-bs-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                        >
+                            Sort
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="triggerId">
+                            <button  class="dropdown-item selected name-sort">Name</button>
+                            <button class="dropdown-item stars-sort" >Stars</button>
+                            <button class="dropdown-item forks-sort" >Forks</button>
+                            <button class="dropdown-item open-issues-sort" >Open Issues</button>
+                            <button class="dropdown-item size-sort" >Size</button>
+                            <button class="dropdown-item date-created-sort" >Date Created</button>
+                        </div>
+                    </div> 
+                </div>
+                <div class="repo-container">
+                    <div class="repositories-items">
+                       
+                        {{!-- <button class="repo-card" >
+                            <h3 class="repo-card-items repo-name">Repository-Hunter</h3>
+                            <p class="repo-card-items repo-language">Language: Ruby</p>
+                            <p class="repo-card-items repo-stats">Stars: 282 | Forks: 28 | Open Issues: 11</p>
+                            <div class="repo-card-items repo-link" ><a  href="https://github.com/AdiChat/Repository-Hunter" target="_blank">View Repository</a>
+                            </div>
+                        </button> --}}
+                    </div>
+                    <div class="page-numbers">
+                        <button class="pn previous-page-btn btn btn-warning">Previous</button>
+                        <a class="pn page-number-item">1</a>
+                        <a class="pn page-number-item">2</a>
+                        <a class="pn page-number-item">3</a>
+                        <a class="pn page-number-item">4</a>
+                        <a class="pn page-number-item">5</a>
+                        <button class="pn next-page-btn btn btn-warning">Next</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <!-- place footer here -->
+        </footer>
+
+        <script src="../scripts/user.js"></script>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>

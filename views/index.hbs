@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+    <head>
+         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GitHawk</title>
+        <link href="./styles/index.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        {{>favicon}}
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+    </head>
+
+    <body style="background-color: white;">
+    <nav class="navbar1 fixed-top">
+    
+        <div class="nav-heading">
+            
+            <span class="nav-image" style="width:20vw; height:13vh;"></span>
+            <input class="searchbar" placeholder="🔎Search"></input>
+        </div>
+    
+        <div class="nav-links">
+            <span>
+                <input type="checkbox" class="checkbox" id="checkbox">
+                <label for="checkbox" class="checkbox-label">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                    <span class="ball"></span>
+                </label>
+            </span>
+            <a href="#" class="nav-links-items">About Us</a>
+            <a href="/login" class="nav-links-items">Login</a>
+            <a href="/register" class="nav-links-items">SignUp</a>
+            <a href="#" class="nav-links-items">Contact Us</a>
+        </div>
+
+   </nav>
+
+        <main>
+            <h1 class="main-heading ">Unlock the Power of Your Repositories!</h1>
+            <div class="main-info text-secondary">Gain deeper insights and optimize your projects with our app, tailored to analyze and enhance your GitHub repositories.</div>
+        </main>
+        
+        <div class="socials">
+            <div class="followus">Follow us on:</div>
+            <div class="icons">
+                <a href="https://www.facebook.com/" class="fa fa-facebook icon-items"></a>
+                <a href="https://www.twitter.com/" class="fa fa-twitter icon-items"></a>
+                <a href="https://www.youtube.com/" class="fa fa-youtube icon-items"></a>
+                <a href="https://www.github.com/" class="fa fa-github icon-items"></a>
+                <a href="https://www.instagram.com/" class="fa fa-instagram icon-items"></a>
+                <a href="https://www.linkedin.com/" class="fa fa-linkedin icon-items"></a>
+            </div>
+     
+        </div>
+        <div class ="card-container">
+       <div class=" card text-start card1">
+        <div class="card-body">
+            <h4 class="card-title">User Search</h4>
+            <p class="card-text">Easily search for GitHub users with a responsive input box. View the top results in an intuitive list of user cards.</p>
+        </div>
+       </div>
+       <div class="card1 card text-start">
+       
+        <div class="card-body">
+            <h4 class="card-title">User Repository Table</h4>
+            <p class="card-text">Click on a user to navigate to a detailed page showcasing their repositories. View essential information including the repository name, description, stars, forks, and open issue.</p>
+        </div>
+       </div>
+       <div class="card1 card text-start">
+       
+        <div class="card-body">
+            <h4 class="card-title">Sorting Options</h4>
+            <p class="card-text">Sort repositories effortlessly by name, stars, forks, or open issues, ensuring you find exactly what you're looking for.</p>
+        </div>
+       </div>
+       <div class="card1 card text-start">
+       
+        <div class="card-body">
+            <h4 class="card-title">Search Filter</h4>
+            <p class="card-text">Utilize a search filter within the user's repository list to quickly locate repositories by name. This feature enhances navigation and efficiency.</p>
+        </div>
+       </div>
+
+        <div class="card text-start card1 ">
+            <div class="card-body">
+                <h4 class="card-title">Commit History Visualization</h4>
+                <p class="card-text">Visualize commit activity over the past year with an interactive graph. Simply click on a repository row to view the commit history, providing insights into the repository's development.</p>
+            </div>
+       </div>
+       <div class="card text-start card1 ">
+            <div class="card-body">
+                <h4 class="card-title">Contributors List</h4>
+                <p class="card-text">Explore the list of contributors for each repository along with their contribution counts. Recognize and appreciate the collaborative efforts behind each project.</p>
+            </div>
+       </div>
+       <div class="card text-start card1 ">
+            <div class="card-body">
+                <h4 class="card-title">Repository Detail View</h4>
+                <p class="card-text">Dive deeper into each repository with a detailed view that includes the README file, a list of recent commits, and open issues. Access this detailed view by clicking the "View" button on the User Repository Table.</p>
+            </div>
+       </div>
+       <div class="card text-start card1 ">
+            <div class="card-body">
+                <h4 class="card-title">Rate Limit Handling</h4>
+                <p class="card-text">Experience seamless browsing with our rate limit handling feature. We gracefully manage GitHub's API rate limits by caching data and informing users, ensuring uninterrupted access and up-to-date information.</p>
+            </div>
+       </div>
+       </div>
+
+       <div class="about-us">
+            <div class="about-us-info" >
+                <h1 class="about-us-h1">Meet the Developers!!</h1>
+                <div class="developers">
+                    <div class="devname">
+                        <span>Aditya Gaur</span> 
+                        <a href="https://www.gmail.com/" class="fa fa-google icon-items"></a>
+                        <a href="https://www.github.com/" class="fa fa-github icon-items"></a>
+                        <a href="https://www.instagram.com/" class="fa fa-instagram icon-items"></a>
+                        <a href="https://www.linkedin.com/" class="fa fa-linkedin icon-items"></a> 
+                    </div>
+                    <div class="devname">
+                        <span>Sujal Kapoor</span> 
+                        <a href="https://www.gmail.com/" class="fa fa-google icon-items"></a>
+                        <a href="https://www.github.com/" class="fa fa-github icon-items"></a>
+                        <a href="https://www.instagram.com/" class="fa fa-instagram icon-items"></a>
+                        <a href="https://www.linkedin.com/" class="fa fa-linkedin icon-items"></a> 
+                    </div>
+                </div>
+            </div>
+        
+            <img  class="about-us-image" src="https://cdn3d.iconscout.com/3d/premium/thumb/software-developer-10961397-8772473.png?f=webp">
+       </div>
+
+       <footer class="footer">
+        <div>© CodeHub,Inc</div>
+        <div class="icons">
+            <a href="https://www.facebook.com/" class="fa fa-facebook icon-items"></a>
+            <a href="https://www.twitter.com/" class="fa fa-twitter icon-items"></a>
+            <a href="https://www.youtube.com/" class="fa fa-youtube icon-items"></a>
+            <a href="https://www.github.com/" class="fa fa-github icon-items"></a>
+            <a href="https://www.instagram.com/" class="fa fa-instagram icon-items"></a>
+            <a href="https://www.linkedin.com/" class="fa fa-linkedin icon-items"></a>
+         </div>
+       </footer>        
+
+        <script src="/scripts/index.js"></script>
+        
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
+

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Dashboard</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        {{> favicon}}
+        <link rel="stylesheet" href="./styles/dashboard.css">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    </head>
+
+    <body>
+
+        <nav class="nav1">
+            <h1 class="nav-text">Welcome {{profile.username}}!</h1>
+            <div class="nav-links">
+                <a class="nav-links-items" >How to use?</a>
+                <a class="nav-links-items fa fa-gear" style="font-size:2vw"></a>
+                <a class="nav-links-items profile-pic" ></a>
+            </div>
+        </nav>
+
+        <form action="/user" method="post" class="searchbar">
+              
+            <input placeholder="🔎Search for a Github User" name="username" type="text" class="search-text" required>
+            <button type="submit" class="btn btn-outline-success search-btn">Search</button>
+
+        </form>
+        
+        <div class="status-and-dropdown hidden">
+        <h2 class="status">Top 10 results based on followers</h2>
+        <div class="sort-options">
+            <div class="asc-desc" style="font-size:20px; margin:0; padding:0;">
+                <div class="asc" style="font-size:20px;">🔼</div>
+                <div class="desc">🔽</div>
+            </div>
+            <div class="dropdown">
+                <button
+                    class="btn btn-secondary dropdown-toggle"
+                    type="button"
+                    id="triggerId"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                >
+                    Sort
+                </button>
+                <div class="dropdown-menu" aria-labelledby="triggerId">
+                    <button  class="dropdown-item bg-success followers-sort">Followers</button>
+                    <button class="dropdown-item repositories-sort" >Repositories</button>
+                    <button class="dropdown-item date-joined-sort" >Date-Joined</button>
+                </div>
+            </div> 
+        </div>
+        </div>
+        <div class="container">
+            <div class="list-container">
+
+            </div>
+        </div>
+
+
+        <script src="./scripts/dashboard.js"></script>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
+

@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2b2828;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container Styling */
+.container {
+    background: rgb(29, 28, 28);
+    color:#ccc;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+}
+
+/* Form Container Styling */
+.form-container h1 {
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+/* Form Styling */
+.form {
+    margin-bottom: 30px;
+}
+
+.form h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.google-login {
+    background-color: #DB4437; /* Google Red */
+    color: white;
+}
+
+.google-login:hover {
+    background-color: #c1351b; /* Darken Google Red on hover */
+}
+
+.google-login i {
+    margin-right: 10px;
+}
+
+.login-link {
+    color: #007bff; /* Blue color for the link */
+    text-decoration: none; /* Remove underline */
+    display: block; /* Make it block-level for better spacing */
+    margin-top: 10px; /* Add some space between the buttons */
+}
+
+.login-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+.login-link:visited {
+    color: #007bff; /* Blue color for the link */
+    text-decoration: none; /* Remove underline */
+    display: block; /* Make it block-level for better spacing */
+    margin-top: 10px; /* Add some space between the buttons */
+}
