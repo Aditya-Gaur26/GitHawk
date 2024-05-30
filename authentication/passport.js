@@ -1,11 +1,12 @@
+require('dotenv').config();
 const passport  =require('passport')
 var GoogleStrategy = require('passport-google-oauth20').Strategy;
 const User = require("../models/user");
 var localStrategy  =require('passport-local')
 const bcrypt = require("bcrypt");
 passport.use(new GoogleStrategy({
-    clientID: "847629111430-64bm9gbmeunso648g36n4ejljbcovevk.apps.googleusercontent.com",
-    clientSecret: "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",
+    clientID:  process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
     callbackURL:  "http://localhost:3000/auth/google/callback"
   },
   async function(accessToken, refreshToken, profile, cb) {
@@ -64,8 +65,6 @@ passport.use(new localStrategy(
     }
   }
 ));
-
-
 
 
 module.exports = passport;

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express')
 const app = express()
 const path = require('path')
@@ -20,9 +21,9 @@ app.use(session({
     secret: 'asbdbakhhk bwbdwbdbwqkhvedwqvedvqwvdwq dvqwjhwqvejqwvejwqvje',
     resave: false,
     saveUninitialized: true,
-    store: MongoStore.create({ mongoUrl: 'mongodb+srv://adityagaur:TestDb@cluster0.fvaxkp7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0' })
+    store: MongoStore.create({ mongoUrl: process.env.MONGO_URL })
 }))
-const github_token = "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";
+const github_token = process.env.GITHUB_TOKEN;
 
 const User = require('./models/user');
 
@@ -226,7 +227,7 @@ app.post("/change_password",(req,res)=>{
     }
 })
 
-mongoose.connect("mongodb+srv://adityagaur:TestDb@cluster0.fvaxkp7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect(process.env.MONGO_URL)
     .then(async ()=>{
         app.listen(PORT);
     })

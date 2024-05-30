@@ -1,3 +1,4 @@
+require('dotenv').config();
 const nodemailer = require('nodemailer');
 var otpGenerator = require("otp-generator")
 
@@ -5,12 +6,12 @@ let otp = otpGenerator.generate(4, { upperCaseAlphabets: false, specialChars:
 false,lowerCaseAlphabets: false });
 
 let transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT,
     secure:false,
     auth: {
-        user: 'adityagauraa@gmail.com', // Your Gmail email address
-        pass: 'dvww ecsx bcjb tqxw' // Your Gmail password
+        user: process.env.SMTP_MAIL, // Your Gmail email address
+        pass: process.env.SMTP_PASSWORD // Your Gmail password
     }
 });
 
@@ -19,7 +20,7 @@ function sendOTP(email) {
     return new Promise((resolve, reject) => {
         // Email content
         let mailOptions = {
-            from: 'adityagauraa@gmail.com',
+            from: process.env.SMTP_MAIL,
             to: email,
             subject: 'OTP for Password Reset from GitHawk',
             text: `Your OTP for password reset is: ${otp}`
