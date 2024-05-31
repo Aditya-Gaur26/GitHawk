@@ -9,7 +9,9 @@ async function get_contributors_list(){
    
     try {
         let {data} = await axios.get(`https://api.github.com/repos/${user_name}/${repo_name}/contributors`,{
-            headers: { 'Authorization': `${github_token}` }
+            headers: {
+                Authorization: `token ${github_token}` 
+            }
         });
         console.log(data);
 
@@ -53,7 +55,9 @@ async function get_commit_data(){
         let data1 = [];
         while(true) {
             let {data} = await axios.get(`https://api.github.com/repos/${user_name}/${repo_name}/commits`,{
-                headers: { 'Authorization': `${github_token}` },
+                headers: {
+                    Authorization: `token ${github_token}` 
+                },
                 params:{
                     per_page:100,
                     page
@@ -81,44 +85,80 @@ async function get_commit_data(){
         let labels = Object.keys(commitcounts);
         let datavals = Object.values(commitcounts);
         const ctx = document.getElementById('commitChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: labels.reverse(),
-                datasets: [{
-                    label: 'Commits per Day',
-                    data: datavals.reverse(),
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    x: {
-                        type: 'time',
-                        time: {
-                            unit: 'day',
-                            displayFormats: {
-                                day: 'YYYY-MM-DD'
+
+        if(labels.length == 0 || datavals.length == 0){
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: [],
+                    datasets: []
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'day',
+                                displayFormats: {
+                                    day: 'YYYY-MM-DD'
+                                }
                             },
-                           
+                            title: {
+                                display: true,
+                                text: 'Days' // Label for X-axis
+                            }
                         },
-                        title: {
-                            display: true,
-                            text: 'Days' // Label for X-axis
-                        }
-                    },
-                    y: {
-                        title: {
-                            display: true,
-                            text: 'Commits' // Label for Y-axis
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Commits' // Label for Y-axis
+                            }
                         }
                     }
                 }
-            }
-        });
-        
+            });
+        }
+        else{
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels.reverse(),
+                    datasets: [{
+                        label: 'Commits per Day',
+                        data: datavals.reverse(),
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'day',
+                                displayFormats: {
+                                    day: 'YYYY-MM-DD'
+                                },
+                               
+                            },
+                            title: {
+                                display: true,
+                                text: 'Days' // Label for X-axis
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Commits' // Label for Y-axis
+                            }
+                        }
+                    }
+                }
+            });
+            
+        }
+       
 
     } catch (error) {
         console.log(error);
@@ -129,7 +169,9 @@ async function get_commit_data(){
 async function get_stargazers_list(){
     try {
         let {data} =  await axios.get(`https://api.github.com/repos/${user_name}/${repo_name}/stargazers`,{
-            headers: { 'Authorization': `${github_token}` }
+            headers: {
+                Authorization: `token ${github_token}` 
+              }
         });
         console.log(data);
 
@@ -169,7 +211,9 @@ async function get_stargazers_list(){
 async function get_watchers_list(){
     try {
         let {data} =  await axios.get(`https://api.github.com/repos/${user_name}/${repo_name}/watchers`,{
-            headers: { 'Authorization': `${github_token}` }
+            headers: {
+                Authorization: `token ${github_token}` 
+            }
         });
         console.log(data);
 
@@ -209,7 +253,9 @@ async function get_watchers_list(){
 async function get_subscribers_list(){
     try {
         let {data} =  await axios.get(`https://api.github.com/repos/${user_name}/${repo_name}/subscribers`,{
-            headers: { 'Authorization': `${github_token}` }
+            headers: {
+                Authorization: `token ${github_token}` 
+            }
         });
         console.log(data);
 
@@ -249,7 +295,9 @@ async function get_subscribers_list(){
 async function get_open_issues(){
     try {
         let {data} =  await axios.get(`https://api.github.com/repos/${user_name}/${repo_name}/issues`,{
-            headers: { 'Authorization': `${github_token}` }
+            headers: {
+                Authorization: `token ${github_token}` 
+              }
         });
         console.log(data);
 

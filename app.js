@@ -68,7 +68,7 @@ app.get('/dashboard/:username',async (req,res)=>{
     try {
         const config = {
             headers: {
-                'Authorization': github_token
+                Authorization: `token ${github_token}` 
             }
         };
         // Make the request using axios with the configured headers
@@ -92,7 +92,7 @@ app.get('/dashboard/:username/:repo_name',async (req,res)=>{
     try {
         const config = {
             headers: {
-                'Authorization': github_token
+                Authorization: `token ${github_token}` 
             }
         };
         // Make the request using axios with the configured headers

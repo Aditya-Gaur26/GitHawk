@@ -23,7 +23,9 @@ async function fetchGitHubUser(query) {
     try {
        
         const response = await axios.get(`https://api.github.com/search/users`, {
-            headers: { 'Authorization': `token ${token}` },
+            headers: {
+                Authorization: `token ${github_token}` 
+            },
             params: {
                 q: query,
                 per_page: 10, // Number of results per page

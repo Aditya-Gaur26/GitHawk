@@ -58,7 +58,7 @@ function handlePagebuttons(){
 async function populate_repo_container_intially(){
     const config = {
         headers: {
-            'Authorization': github_token
+            Authorization: `token ${github_token}` 
         },
         params: {
             per_page:5 , 
@@ -104,7 +104,7 @@ async function fetch_all_repos(){
     while(repos_fetched < repo_count){
         const config = {
             headers: {
-                'Authorization': github_token
+                Authorization: `token ${github_token}` 
             },
             params: {
                 per_page:100 , // Return 10 items per page
