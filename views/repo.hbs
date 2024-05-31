@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>repo_name</title>
+        <title>{{repo_data.name}}</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -20,7 +20,8 @@
         <link rel="stylesheet" href="../../styles/repo.css">
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
+         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
+        
     </head>
 
     <body>
@@ -52,15 +53,68 @@
                         
                         <li class="list-group-item"><strong>Clone URL:</strong> <a href="{{repo_data.clone_url}}" target="_blank">{{repo_data.clone_url}}</a></li>
                         <li class="list-group-item"><strong>License:</strong> <a href="{{repo_data.license.url}}">{{repo_data.license.name}}</a></li>
+                        <li class="list-group-item noc hidden"><strong>Number Of Contributors:</strong><span id="number-of-contributors"></span> </li>
+                        
+
                     </ul>
                 </div>
             </div>
+            <h2 class="heading" style="width: 85%; margin:auto;">Commit History Visualization</h2>
+            <div class="canvas"><canvas id="commitChart" width="400" height="200"></canvas></div>
+
+           <div class="contributors-list container mt-4">
+                <h2 class="contributors-list-heading hidden">Contributors </h2>
+                <div class="row" id="contributors-row">
+
+                </div>
+           </div>
+
+           <div class="container mt-4">
+                <div class="stargazers">
+                    <h2 class="stargazers-heading hidden">Stargazers</h2>
+                    <div class="row stars-container">
+                        
+                    </div>
+                </div>
+            </div>  
+
+            <div class="container mt-4">
+                <div class="watchers">
+                    <h2 class="watchers-heading hidden">Watchers</h2>
+                    <div class="row watchers-container">
+                        
+                    </div>
+                </div>
+            </div>  
+
+             <div class="container mt-4">
+                <div class="subscribers">
+                    <h2 class="subscribers-heading hidden">Subscribers</h2>
+                    <div class="row subscribers-container">
+                        
+                    </div>
+                </div>
+            </div>  
+
+             <div class="container mt-4">
+                <div class="open-issues">
+                    <h2 class="issues-heading">Open Issues</h2>
+                    <div class="issues-container row">
+                    
+                    </div>
+                </div>
+            </div>
+
+
+
+
         </main>
         <footer>
             <!-- place footer here -->
         </footer>
 
         <script src="../../scripts/repo.js"></script>
+       
         <!-- Bootstrap JavaScript Libraries -->
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

@@ -69,7 +69,7 @@ async function fetchGitHubUser(query) {
             </div>`)
             avatar_url = user_data.avatar_url;
             li[0].querySelector('.pfp').style.backgroundImage = `url('${avatar_url}')`;
-            li[0].setAttribute("href",`/user/${username}`)
+            li[0].setAttribute("href",`/dashboard/${username}`)
             container.append(li);
 
         }

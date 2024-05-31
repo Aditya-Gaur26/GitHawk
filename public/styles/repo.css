@@ -24,3 +24,95 @@
 .list-group-item {
     font-size: 1.1rem;
 }
+.hidden{
+    display:none;
+}
+
+.contributors-list-heading{
+    text-align: center;
+    margin-top:2vh;
+    margin-bottom: 5vh;
+    background-color: blanchedalmond;
+    padding: 1%;
+}
+
+.avatar{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    padding: 1%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    margin-top:1vh;
+}
+.contributor-info:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.stargazers-heading{
+    margin-top:2vh;
+    margin-bottom: 5vh;
+    text-align: center;
+    background-color: blanchedalmond;
+    padding: 1%;
+}
+
+.stargazer-info:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.watchers-heading{
+    margin-top:2vh;
+    margin-bottom: 5vh;
+    text-align: center;
+    background-color: blanchedalmond;
+    padding: 1%;
+}
+
+.watchers-info:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.subscribers-heading{
+    margin-top:2vh;
+    margin-bottom: 5vh;
+    text-align: center;
+    background-color: blanchedalmond;
+    padding: 1%;
+}
+
+.subscribers-info:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.issues-heading{
+    margin-top:2vh;
+    margin-bottom: 5vh;
+    text-align: center;
+    background-color: blanchedalmond;
+    padding: 1%;
+}
+
+.issue-info:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.canvas{
+    width:40%;
+    margin:auto;
+    margin-top:5vh;
+    margin-bottom: 5vh;
+    border:4px solid black;
+    border: 20px;
+
+}
+
+.heading{
+    margin-top:2vh;
+    margin-bottom: 5vh;
+    text-align: center;
+    background-color: blanchedalmond;
+    padding: 1%;
+}
