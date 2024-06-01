@@ -7,6 +7,9 @@ const PORT = 3000;
 const mongoose = require('mongoose')
 const axios = require('axios')
 const bcrypt = require('bcrypt')
+const multer = require('multer')
+const cloudinary = require('cloudinary');
+const datauri = require('datauri')
 app.set('view engine','hbs');
 hbs.registerPartials(__dirname+"/views/partials");
 app.use(express.static(path.join(__dirname,"Public")));
@@ -30,6 +33,29 @@ const User = require('./models/user');
 const passport = require('./authentication/passport');
 app.use(passport.initialize());
 app.use(passport.session());
+
+
+// const upload = multer({ dest: 'profile_images/' });
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, __dirname+'/profile_images')
+    },
+    filename: function (req, file, cb) {
+      const uniqueSuffix = req.user._id;
+      cb(null,uniqueSuffix + path.extname(file.originalname));
+    }
+  })
+  
+  const upload = multer({ storage: storage })
+
+  
+          
+cloudinary.config({ 
+  cloud_name: process.env.CLOUD_NAME, 
+  api_key: process.env.CLOUD_API_KEY, 
+  api_secret: process.env.CLOUD_API_SECRET
+});
 
 app.get('/',(req,res)=>{
     res.render('index');
@@ -225,6 +251,34 @@ app.post("/change_password",(req,res)=>{
         console.error("Error:", error);
         res.send(false);
     }
+})
+
+app.post("/change_profile",upload.single('file') ,async (req,res)=>{
+    console.log(req.file);
+    try {
+        let cloudinary_image_url;
+        let image_data_uri;
+        await cloudinary.v2.uploader.upload(req.file.path,(error, result)=>{
+            console.log(result, error);
+            cloudinary_image_url = result.url;
+        });
+        await datauri(req.file.path,(err,content,meta)=>{
+            if(err){
+                console.log(err);
+            }
+            else{
+                // console.log(content);
+                image_data_uri = content;
+            }
+        })
+        // console.log(image_data_uri)
+        await User.findByIdAndUpdate(req.user._id,{image:req.file.path,cloudinary_image_url,image_data_uri});
+
+        res.redirect('/dashboard');
+    } catch (error) {
+        res.send(error);
+    }
+  
 })
 
 mongoose.connect(process.env.MONGO_URL)

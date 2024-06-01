@@ -22,7 +22,9 @@ const userSchema = new Schema({
         type:String
     },
     googleAccessToken:String,
-    image:String
+    image:String,
+    image_data_uri:String,
+    cloudinary_image_url:String
 })
 
 

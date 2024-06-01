@@ -30,9 +30,39 @@
             <div class="nav-links">
                 <a class="nav-links-items" >How to use?</a>
                 <a class="nav-links-items fa fa-gear" style="font-size:2vw"></a>
-                <a class="nav-links-items profile-pic" ></a>
+                {{#if profile.cloudinary_image_url}}
+                <a class="nav-links-items profile-pic" style="background-image: url( {{profile.cloudinary_image_url}});"></a>
+                {{else}}
+                <a class="nav-links-items profile-pic"></a>
+                {{/if}}
+               
             </div>
         </nav>
+
+         <div class="user-container hidden">
+            <div class="profile-image-1">
+                {{#if profile.cloudinary_image_url}}
+                    <div class="profile-image-inside" style="background-image: url( {{profile.cloudinary_image_url}});">
+                    </div>
+                
+                {{else}}
+                    <div class="profile-image-inside">
+                    </div>
+                {{/if}}
+                <button class="change-profile-pic btn btn-primary">Change Profile Pic</button>
+                <input name="profile_pic" type="file"  id="fileInput" class="hidden">
+            </div>
+            
+            <ul class="user-details">
+                <li class="hidden" ><span>id:</span> <span id="_id">{{profile._id}}</span></li>
+                <li><span>Username:</span> <span id="username">{{profile.username}}</span></li>
+                <li><span>Email:</span> <span>{{profile.email}}</span></li>
+                <li><span>Date of Birth:</span> <span>{{profile.dob}}</span></li>
+                <li><span>Google ID:</span> <span>{{profile.googleid}}</span></li>
+            </ul>
+            <div class="cross-user-details">
+                <span class="actual-cross">❌</span></div>
+        </div>
 
         <form action="/user" method="post" class="searchbar">
               
@@ -88,5 +118,6 @@
             crossorigin="anonymous"
         ></script>
     </body>
+
 </html>
 

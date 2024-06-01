@@ -41,14 +41,17 @@ a{
 }
 
 .profile-pic{
-    min-width: 6vh;
-    min-height: 6vh;
+    min-width: 30px;
+    min-height: 30px;
     border-radius:50%;
-    background-image:url(/images/favicon.png);
+    background-image:url(/images/defaultdp.webp);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    cursor: pointer;
 }
+
+
 
 .searchbar{
     margin: 10vh auto;
@@ -115,6 +118,7 @@ a{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .user-info{
     width:60%;
 }
@@ -194,4 +198,52 @@ a{
 
 .hidden{
     display: none;
+}
+
+.user-container {
+    width: 50%;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.profile-image-inside {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-image: url("../images/defaultdp.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.profile-image-1{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.user-details {
+    list-style: none;
+    padding: 0;
+}
+.user-details li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.user-details li:last-child {
+    border-bottom: none;
+}
+.user-details li span {
+    font-weight: bold;
+}
+
+.cross-user-details{
+   text-align: center;
+}
+.actual-cross{
+    cursor: pointer;
 }

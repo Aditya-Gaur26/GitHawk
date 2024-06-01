@@ -1,6 +1,7 @@
 const input =document.querySelector('.search-text');
 const btn  =document.querySelector('.search-btn');
-
+let username = $("#username").text();
+let id = $("#_id").text();
 let sort_type = "followers";
 let sort_order = "desc";
 let input_val_existing="";
@@ -24,7 +25,7 @@ async function fetchGitHubUser(query) {
        
         const response = await axios.get(`https://api.github.com/search/users`, {
             headers: {
-                Authorization: `token ${github_token}` 
+                Authorization: `token ${token}` 
             },
             params: {
                 q: query,
@@ -143,3 +144,29 @@ dropdownMenu.addEventListener("click",(ev)=>{
 //     ev.preventDefault();
 //     console.log(ev.target);
 // })
+
+let profile_pic = $(".profile-pic");
+
+profile_pic[0].addEventListener("click",(ev)=>{
+    $(".user-container").removeClass("hidden");
+})
+
+$(".actual-cross")[0].addEventListener("click",(ev)=>{
+    $(".user-container").addClass("hidden");
+})
+
+$(".change-profile-pic")[0].addEventListener("click",(ev)=>{
+    $("#fileInput")[0].click();
+})
+$("#fileInput")[0].addEventListener("change",async (ev)=>{
+
+    const file = ev.target.files[0];
+    let formData = new FormData();
+    formData.append('file',file);
+    let data = await axios.post("/change_profile", formData,{
+        headers:{
+            'Content-Type': "multipart/form-data"
+        },
+        id 
+    })
+});
