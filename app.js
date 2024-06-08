@@ -9,7 +9,7 @@ const axios = require('axios')
 const bcrypt = require('bcrypt')
 const multer = require('multer')
 const cloudinary = require('cloudinary');
-const datauri = require('datauri')
+
 app.set('view engine','hbs');
 hbs.registerPartials(__dirname+"/views/partials");
 app.use(express.static(path.join(__dirname,"Public")));
